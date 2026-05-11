@@ -1,0 +1,25 @@
+pipeline {
+    agent any
+
+    stages {
+
+        stage('Checkout') {
+            steps {
+                git branch: 'main',
+                url: 'https://github.com/Chinmay-023/Devops-lab.git'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                echo 'Build Successful'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                echo 'Test Successful'
+            }
+        }
+    }
+}
