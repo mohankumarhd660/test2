@@ -6,7 +6,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 git branch: 'main',
-                url: 'https://github.com/Chinmay-023/Devops-lab.git'
+                url: 'https://github.com/mohankumarhd660/test2.git'
             }
         }
 
