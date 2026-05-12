@@ -38,9 +38,44 @@ pipeline {
     }
 }
 
+#!/usr/bin/python
+from ansible.module_utils.basic import AnsibleModule
 
+def walk():
+   module_args = dict(name=dict(type='str', required=True))
+   module = AnsibleModule(argument_spec=module_args)
+   result = {"changed": False, "message": f"Welcome, {module.params['name']}"}
+   module.exit_json(**result)
+   
+if __name__ == '__main__':
+    walk()
+-------------------------------------------------------------------------------------------
+---
+- name: My first playbook
+  hosts: local
+  connection: local
 
+  tasks:
+    - name: My first task
+      debug:
+        msg: "Ansible is a config management tool"
+--------------------------------------------------------------------------------------------
 
+---
+- name: Ansible with one module
+  hosts: local
+  gather_facts: no
+
+  tasks:
+    - name: Create first module
+      file:
+        path: result
+        state: touch
+
+    - name: prog7
+      debug:
+        msg: "Hi message"
+--------------------------------------------------------------------------------------------
 ---
 - name: Deploy Artifact to localhost
   hosts: localhost
