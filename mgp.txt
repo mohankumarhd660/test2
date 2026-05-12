@@ -53,5 +53,5 @@ pipeline {
       become_method: su
 
       copy:
-        src: "/var/lib/jenkins/workspace/prg8/target/HelloMaven-1.0-SNAPSHOT.jar"
-        dest: "/home/student/file_name.jar"
+        src: "/var/lib/jenkins/workspace/pipeline_name/target/HelloMaven-1.0-SNAPSHOT.jar"
+        dest: "/home/student/kanna.jar"
