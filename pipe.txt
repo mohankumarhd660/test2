@@ -1,0 +1,17 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Test') {
+            steps {
+                echo "Testing pipeline execution"
+            }
+        }
+
+        stage('Run') {
+            steps {
+                echo "Pipeline executed successfully"
+            }
+        }
+    }
+}
