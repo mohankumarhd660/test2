@@ -60,21 +60,15 @@ if __name__ == '__main__':
       debug:
         msg: "Ansible is a config management tool"
 --------------------------------------------------------------------------------------------
-
 ---
 - name: Ansible with one module
   hosts: local
-  gather_facts: no
+  connection: local
 
   tasks:
     - name: Create first module
-      file:
-        path: result
-        state: touch
-
-    - name: prog7
       debug:
-        msg: "Hi message"
+        msg: "Hi I am Rohith Sharma"
 --------------------------------------------------------------------------------------------
 ---
 - name: Deploy Artifact to localhost
