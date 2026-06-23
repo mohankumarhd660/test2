@@ -2,23 +2,22 @@ pipeline {
     agent any
 
     stages {
-
-        stage('Checkout') {
+        stage('build') {
             steps {
                 git branch: 'main',
-                url: 'https://github.com/mohankumarhd660/test2.git'
+                    url: 'https://github.com/mohankumarhd660/test2.git'
             }
         }
 
-        stage('Build') {
+        stage('test') {
             steps {
-                echo 'Build Successful'
+                echo 'mvn clean package'
             }
         }
 
-        stage('Test') {
+        stage('run') {
             steps {
-                echo 'Test Successful'
+                echo 'mvn test'
             }
         }
     }
